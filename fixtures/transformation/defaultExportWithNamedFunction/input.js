@@ -1,6 +1,5 @@
-import myDependency from 'dependency';
-
+import myDependency from "dependency";
 
 export default function helloWorld() {
-	console.log("Hello World!");
+  console.log("Hello World!");
 }

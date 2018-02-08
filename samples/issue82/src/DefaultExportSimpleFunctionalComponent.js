@@ -1,6 +1,8 @@
-import React from 'react'
-import MessageList from './ChildComponent.js';
+import React from "react";
+import MessageList from "./ChildComponent.js";
 
-export function another() { return <MessageList/> };
+export function another() {
+  return <MessageList />;
+}
 
-export default () => <MessageList/>;
+export default () => <MessageList />;

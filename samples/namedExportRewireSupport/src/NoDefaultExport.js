@@ -1,5 +1,5 @@
-let whoToGreet = 'John';
+let whoToGreet = "John";
 
 export function greet() {
-	return 'Hello ' + whoToGreet;
+  return "Hello " + whoToGreet;
 }

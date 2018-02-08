@@ -1,3 +1,3 @@
 export let node = {
-	theDomNode: true
+  theDomNode: true
 };

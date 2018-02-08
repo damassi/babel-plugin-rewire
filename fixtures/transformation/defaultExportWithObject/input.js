@@ -1,7 +1,7 @@
-import aFunction from 'myModule';
+import aFunction from "myModule";
 
 export default {
-	addOne: function(val) {
-		return aFunction() + 1;
-	}
-}
+  addOne: function(val) {
+    return aFunction() + 1;
+  }
+};

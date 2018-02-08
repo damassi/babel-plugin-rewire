@@ -1,31 +1,34 @@
-import React from 'react'
-import MessageList from './ChildComponent.js'
+import React from "react";
+import MessageList from "./ChildComponent.js";
 
 function MySpecialComponentIWantToRewire() {
-	return <div>Output</div>;
+  return <div>Output</div>;
 }
 
 function ComponentToRewirePerElement({ element, children }) {
-	return <div key={element.get('id')}>{children}</div>;
+  return <div key={element.get("id")}>{children}</div>;
 }
 
 export let rewireInlineComponent = () => <MySpecialComponentIWantToRewire />;
 
 export let rewireWitMap = () => {
-	return (<div>
-		{ array.map((element) => (
-			<ComponentToRewirePerElement element={element}>
-				{element.get('text')}
-			</ComponentToRewirePerElement>
-		)) }
-	</div>);
+  return (
+    <div>
+      {array.map(element => (
+        <ComponentToRewirePerElement element={element}>
+          {element.get("text")}
+        </ComponentToRewirePerElement>
+      ))}
+    </div>
+  );
 };
 
-export function another() { return <MessageList/> };
+export function another() {
+  return <MessageList />;
+}
 
 export let arrowWithReturn = () => {
-	return <MessageList/>;
+  return <MessageList />;
 };
 
-export default () => <MessageList/>;
-
+export default () => <MessageList />;

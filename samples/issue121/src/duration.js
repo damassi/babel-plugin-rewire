@@ -1,3 +1,3 @@
 export function getDuration() {
-    return "20ms";
+  return "20ms";
 }

@@ -1,5 +1,5 @@
-var ModuleToRewire = require('./ModuleToRewire.js').default;
+var ModuleToRewire = require("./ModuleToRewire.js").default;
 
 module.exports = function(val) {
-	return val + ModuleToRewire(val)
+  return val + ModuleToRewire(val);
 };

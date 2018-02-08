@@ -1,10 +1,10 @@
 /** @module main */
 
-'use strict';
+"use strict";
 
-import {foo} from './dependency';
+import { foo } from "./dependency";
 
 /** Executes the module. */
 export function run() {
-	foo('bar');
+  foo("bar");
 }

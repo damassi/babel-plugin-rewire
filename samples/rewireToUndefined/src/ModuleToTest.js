@@ -1,5 +1,5 @@
-const shouldNotFail = () => {}
+const shouldNotFail = () => {};
 
-export function test () {
-  shouldNotFail()
+export function test() {
+  shouldNotFail();
 }

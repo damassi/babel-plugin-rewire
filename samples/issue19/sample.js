@@ -1,42 +1,47 @@
-'use strict';
+"use strict";
 
-import expect from 'expect.js';
-import { run, __Rewire__, __GetDependency__, __ResetDependency__,  } from './src/main.js';
+import expect from "expect.js";
+import {
+  run,
+  __Rewire__,
+  __GetDependency__,
+  __ResetDependency__
+} from "./src/main.js";
 
 function createPseudoSpy(name) {
-	let calls = [];
+  let calls = [];
 
-	let spy = function(...args) {
-		calls.push(args);
-	};
+  let spy = function(...args) {
+    calls.push(args);
+  };
 
-	spy.toHaveBeenCalled = function() {
-		return calls.length > 0;
-	}
+  spy.toHaveBeenCalled = function() {
+    return calls.length > 0;
+  };
 
-	spy.toHaveBeenCalledWith = function(...expectedArgs) {
-		return expectedArgs.every((arg, index) => (calls[0][index] === arg));
-	};
+  spy.toHaveBeenCalledWith = function(...expectedArgs) {
+    return expectedArgs.every((arg, index) => calls[0][index] === arg);
+  };
 
-	spy.identity = function() { return name; };
+  spy.identity = function() {
+    return name;
+  };
 
-	return spy;
+  return spy;
 }
 
-describe('Main', function() {
+describe("Main", function() {
+  it("calls dependency's foo:", function() {
+    let spy = createPseudoSpy("my spy");
+    __Rewire__("foo", spy);
 
-	it('calls dependency\'s foo:', function() {
-		let spy = createPseudoSpy('my spy');
-		__Rewire__('foo', spy);
+    run();
 
-		run();
+    expect(__GetDependency__("foo")).to.be(spy);
+    expect(spy.toHaveBeenCalledWith("bar")).to.be(true);
 
-		expect(__GetDependency__('foo')).to.be(spy);
-		expect(spy.toHaveBeenCalledWith('bar')).to.be(true);
+    __ResetDependency__("foo");
 
-		__ResetDependency__('foo');
-
-		expect(__GetDependency__('foo')).not.to.be(spy);
-
-	});
+    expect(__GetDependency__("foo")).not.to.be(spy);
+  });
 });

@@ -1,1 +1,1 @@
-export type Bla = 'BLABLA' | 'BLAH';
+export type Bla = "BLABLA" | "BLAH";

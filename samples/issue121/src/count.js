@@ -1,3 +1,3 @@
 export function getCount() {
-    return 3;
+  return 3;
 }

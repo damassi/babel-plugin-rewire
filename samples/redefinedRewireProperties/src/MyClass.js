@@ -1,8 +1,7 @@
-let test = 'Local Property to rewire in MyClass';
+let test = "Local Property to rewire in MyClass";
 
 export function localFunction() {
-	return test + ":: MyClass.js";
+  return test + ":: MyClass.js";
 }
 
-export default class MyClass {
-}
+export default class MyClass {}

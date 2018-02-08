@@ -1,12 +1,10 @@
 function useBeforeDeclaration() {
-	return myFunc();
-};
+  return myFunc();
+}
 
 function myFunc() {
   return 2;
-};
-
-
+}
 
 var mySecondFunc = function() {
   return 2;
@@ -21,9 +19,9 @@ var Functions = {
     return mySecondFunc();
   },
 
-	testUseBeforeDeclaration: function() {
-		return useBeforeDeclaration();
-	}
+  testUseBeforeDeclaration: function() {
+    return useBeforeDeclaration();
+  }
 };
 
 module.exports = Functions;

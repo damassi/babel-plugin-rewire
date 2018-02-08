@@ -1,25 +1,19 @@
 var varA, varB, varC;
 
 function setVarA(bool) {
-	if(bool) {
-		varA = varB;
-	}
-	else {
-		varA = varC;
-	}
+  if (bool) {
+    varA = varB;
+  } else {
+    varA = varC;
+  }
 }
 
 function setVarB(v) {
-	varB = v;
+  varB = v;
 }
 
 function setVarC(v) {
-	varC = v;
+  varC = v;
 }
 
-export {
-	varA,
-	setVarA,
-	setVarB,
-	setVarC
-}
+export { varA, setVarA, setVarB, setVarC };

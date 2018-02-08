@@ -1,13 +1,13 @@
 /** @module dependency */
 
-'use strict';
+"use strict";
 
 /** Does some stuff. */
 export function baz(qux) {
-	return qux.toLowerCase();
+  return qux.toLowerCase();
 }
 
 /** Does other stuff. */
 export function foo(bar) {
-	return bar.toUpperCase();
+  return bar.toUpperCase();
 }

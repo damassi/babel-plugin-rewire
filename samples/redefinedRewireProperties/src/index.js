@@ -1,11 +1,11 @@
-import MyClass from './MyClass.js';
+import MyClass from "./MyClass.js";
 
-let test = 'Local Property to rewire';
+let test = "Local Property to rewire";
 
 export function localFunction() {
-	return test + ":: index.js";
+  return test + ":: index.js";
 }
 
-MyClass.foo = 'bar';
+MyClass.foo = "bar";
 
 export default MyClass;

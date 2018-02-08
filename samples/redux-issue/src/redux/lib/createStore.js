@@ -1,11 +1,13 @@
-'use strict';
+"use strict";
 
 exports.__esModule = true;
-exports['default'] = createStore;
+exports["default"] = createStore;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-var _utilsIsPlainObject = require('./utils/isPlainObject');
+var _utilsIsPlainObject = require("./utils/isPlainObject");
 
 var _utilsIsPlainObject2 = _interopRequireDefault(_utilsIsPlainObject);
 
@@ -16,7 +18,7 @@ var _utilsIsPlainObject2 = _interopRequireDefault(_utilsIsPlainObject);
  * Do not reference these action types directly in your code.
  */
 var ActionTypes = {
-  INIT: '@@redux/INIT'
+  INIT: "@@redux/INIT"
 };
 
 exports.ActionTypes = ActionTypes;
@@ -42,8 +44,8 @@ exports.ActionTypes = ActionTypes;
  */
 
 function createStore(reducer, initialState) {
-  if (typeof reducer !== 'function') {
-    throw new Error('Expected the reducer to be a function.');
+  if (typeof reducer !== "function") {
+    throw new Error("Expected the reducer to be a function.");
   }
 
   var currentReducer = reducer;
@@ -103,16 +105,22 @@ function createStore(reducer, initialState) {
    * return something else (for example, a Promise you can await).
    */
   function dispatch(action) {
-    if (!_utilsIsPlainObject2['default'](action)) {
-      throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+    if (!_utilsIsPlainObject2["default"](action)) {
+      throw new Error(
+        "Actions must be plain objects. " +
+          "Use custom middleware for async actions."
+      );
     }
 
-    if (typeof action.type === 'undefined') {
-      throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant?');
+    if (typeof action.type === "undefined") {
+      throw new Error(
+        'Actions may not have an undefined "type" property. ' +
+          "Have you misspelled a constant?"
+      );
     }
 
     if (isDispatching) {
-      throw new Error('Reducers may not dispatch actions.');
+      throw new Error("Reducers may not dispatch actions.");
     }
 
     try {
@@ -122,7 +130,7 @@ function createStore(reducer, initialState) {
       isDispatching = false;
     }
 
-    listeners.slice().forEach(function (listener) {
+    listeners.slice().forEach(function(listener) {
       return listener();
     });
     return action;

@@ -1,1 +1,1 @@
-export { default } from './moduleToExport.js';
+export { default } from "./moduleToExport.js";

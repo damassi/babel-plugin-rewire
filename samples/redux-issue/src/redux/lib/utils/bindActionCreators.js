@@ -1,16 +1,18 @@
-'use strict';
+"use strict";
 
 exports.__esModule = true;
-exports['default'] = bindActionCreators;
+exports["default"] = bindActionCreators;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-var _utilsMapValues = require('../utils/mapValues');
+var _utilsMapValues = require("../utils/mapValues");
 
 var _utilsMapValues2 = _interopRequireDefault(_utilsMapValues);
 
 function bindActionCreator(actionCreator, dispatch) {
-  return function () {
+  return function() {
     return dispatch(actionCreator.apply(undefined, arguments));
   };
 }
@@ -38,18 +40,27 @@ function bindActionCreator(actionCreator, dispatch) {
  */
 
 function bindActionCreators(actionCreators, dispatch) {
-  if (typeof actionCreators === 'function') {
+  if (typeof actionCreators === "function") {
     return bindActionCreator(actionCreators, dispatch);
   }
 
-  if (typeof actionCreators !== 'object' || actionCreators === null || actionCreators === undefined) {
+  if (
+    typeof actionCreators !== "object" ||
+    actionCreators === null ||
+    actionCreators === undefined
+  ) {
     // eslint-disable-line no-eq-null
-    throw new Error('bindActionCreators expected an object or a function, instead received ' + (actionCreators === null ? 'null' : typeof actionCreators) + '. ' + 'Did you write "import ActionCreators from" instead of "import * as ActionCreators from"?');
+    throw new Error(
+      "bindActionCreators expected an object or a function, instead received " +
+        (actionCreators === null ? "null" : typeof actionCreators) +
+        ". " +
+        'Did you write "import ActionCreators from" instead of "import * as ActionCreators from"?'
+    );
   }
 
-  return _utilsMapValues2['default'](actionCreators, function (actionCreator) {
+  return _utilsMapValues2["default"](actionCreators, function(actionCreator) {
     return bindActionCreator(actionCreator, dispatch);
   });
 }
 
-module.exports = exports['default'];
+module.exports = exports["default"];

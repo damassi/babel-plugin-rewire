@@ -1,7 +1,7 @@
-import Path from 'path';
+import Path from "path";
 
-var env = 'production';
+var env = "production";
 
 module.exports = function(name) {
-	return Path.normalise(name) + ' ' + env;
-}
+  return Path.normalise(name) + " " + env;
+};

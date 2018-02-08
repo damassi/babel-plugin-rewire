@@ -1,10 +1,10 @@
 // @flow
-import PushQueueItem from './PushQueueItem';
+import PushQueueItem from "./PushQueueItem";
 
 export default class PushQueue {
-	constructor() {
-		this._queue = new Map();
-	}
+  constructor() {
+    this._queue = new Map();
+  }
 
   static createItem(action, payload) {
     return new PushQueueItem(action, payload);

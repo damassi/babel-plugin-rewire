@@ -1,5 +1,3 @@
-import { namedFunction } from './ExportNamedFunction.js';
+import { namedFunction } from "./ExportNamedFunction.js";
 
-export {
-	namedFunction
-};
+export { namedFunction };

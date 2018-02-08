@@ -1,22 +1,22 @@
 // @flow
 export default class PushQueueItem {
-	payload: Object;
-	action: string;
+  payload: Object;
+  action: string;
 
-	constructor(action: string, payload: Object) {
-		this.action = action;
-		this.payload = payload;
-	}
+  constructor(action: string, payload: Object) {
+    this.action = action;
+    this.payload = payload;
+  }
 
-	get id() {
-		return this.payload.id;
-	}
+  get id() {
+    return this.payload.id;
+  }
 
-	get _id() {
-		return this.payload._id;
-	}
+  get _id() {
+    return this.payload._id;
+  }
 
-	get __id() {
-		return this.payload.__id;
-	}
+  get __id() {
+    return this.payload.__id;
+  }
 }

@@ -1,9 +1,9 @@
 let called = false;
 
 export default function something() {
-	called = true;
+  called = true;
 }
 
 export function wasCalled() {
-	return called;
+  return called;
 }

@@ -1,6 +1,7 @@
-var MyModule = require('MyModule');
+var MyModule = require("MyModule");
 
-var Temp, Thing = MyModule.doDah;
+var Temp,
+  Thing = MyModule.doDah;
 
 function out(todo) {
   var result = Thing.process(todo);

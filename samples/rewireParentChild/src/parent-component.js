@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const ParentComponent = ({ children }) =>
-  <div className="parent">{ children }</div>;
+const ParentComponent = ({ children }) => (
+  <div className="parent">{children}</div>
+);
 
 export default ParentComponent;

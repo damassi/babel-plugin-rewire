@@ -1,11 +1,11 @@
-import { Database } from './Database.js';
+import { Database } from "./Database.js";
 
 export default class RewireExample {
-	constructor(){
-		this.database = new Database();
-	}
+  constructor() {
+    this.database = new Database();
+  }
 
-	outputDatabaseInfo() {
-		return this.database.info;
-	}
+  outputDatabaseInfo() {
+    return this.database.info;
+  }
 }

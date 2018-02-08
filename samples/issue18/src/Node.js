@@ -1,3 +1,3 @@
 export default {
-	isMock: false
+  isMock: false
 };

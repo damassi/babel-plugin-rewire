@@ -1,1 +1,1 @@
-export let config = { mode: 'development' };
+export let config = { mode: "development" };

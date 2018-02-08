@@ -4,17 +4,17 @@ let preDecrementValue = 0;
 let postDecrementValue = 0;
 
 export function preIncrement() {
-	return ++preIncrementValue;
+  return ++preIncrementValue;
 }
 
 export function postIncrement() {
-	return postIncrementValue++;
+  return postIncrementValue++;
 }
 
 export function preDecrement() {
-	return --preDecrementValue;
+  return --preDecrementValue;
 }
 
 export function postDecrement() {
-	return postDecrementValue--;
+  return postDecrementValue--;
 }

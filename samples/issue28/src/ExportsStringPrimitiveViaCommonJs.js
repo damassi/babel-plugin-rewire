@@ -1,1 +1,1 @@
-module.exports = 'test common js';
+module.exports = "test common js";

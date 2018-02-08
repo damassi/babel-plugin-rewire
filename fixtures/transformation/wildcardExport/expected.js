@@ -1,1 +1,1 @@
-export * from 'path/to/thing';
+export * from "path/to/thing";

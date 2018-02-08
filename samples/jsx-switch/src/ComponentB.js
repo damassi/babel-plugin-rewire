@@ -1,5 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export default function ComponentB() {
-	return (<div>ComponentB</div>);
+  return <div>ComponentB</div>;
 }

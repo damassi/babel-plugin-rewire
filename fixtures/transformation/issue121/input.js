@@ -1,12 +1,12 @@
-import {getCount} from "./count.js";
-import {getDuration} from "./duration.js";
+import { getCount } from "./count.js";
+import { getDuration } from "./duration.js";
 
 export default class {
-	getCount() {
-		return getCount();
-	}
+  getCount() {
+    return getCount();
+  }
 
-	getDuration() {
-		return getDuration();
-	}
+  getDuration() {
+    return getDuration();
+  }
 }

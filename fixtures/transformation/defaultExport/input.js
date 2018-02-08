@@ -1,3 +1,3 @@
-import MyModule from 'path/to/MyModule.js';
+import MyModule from "path/to/MyModule.js";
 
 export default "";

@@ -1,3 +1,3 @@
-export function namedFunction( val ) {
-	return val + 1;
+export function namedFunction(val) {
+  return val + 1;
 }

@@ -1,6 +1,6 @@
-let foo='foo';
+let foo = "foo";
 
 export default {
   foo,
-  bar: 'bar'
+  bar: "bar"
 };

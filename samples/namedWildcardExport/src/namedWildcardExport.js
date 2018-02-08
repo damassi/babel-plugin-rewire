@@ -1,1 +1,1 @@
-export * as namedWildcardExport from './namedExports';
+export * as namedWildcardExport from "./namedExports";

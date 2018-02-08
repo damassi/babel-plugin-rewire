@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 exports.__esModule = true;
-exports['default'] = isPlainObject;
+exports["default"] = isPlainObject;
 var fnToString = function fnToString(fn) {
   return Function.prototype.toString.call(fn);
 };
@@ -12,11 +12,14 @@ var fnToString = function fnToString(fn) {
  */
 
 function isPlainObject(obj) {
-  if (!obj || typeof obj !== 'object') {
+  if (!obj || typeof obj !== "object") {
     return false;
   }
 
-  var proto = typeof obj.constructor === 'function' ? Object.getPrototypeOf(obj) : Object.prototype;
+  var proto =
+    typeof obj.constructor === "function"
+      ? Object.getPrototypeOf(obj)
+      : Object.prototype;
 
   if (proto === null) {
     return true;
@@ -24,7 +27,11 @@ function isPlainObject(obj) {
 
   var constructor = proto.constructor;
 
-  return typeof constructor === 'function' && constructor instanceof constructor && fnToString(constructor) === fnToString(Object);
+  return (
+    typeof constructor === "function" &&
+    constructor instanceof constructor &&
+    fnToString(constructor) === fnToString(Object)
+  );
 }
 
-module.exports = exports['default'];
+module.exports = exports["default"];

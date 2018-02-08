@@ -1,4 +1,4 @@
-var MyModule = require('MyModule');
+var MyModule = require("MyModule");
 
 function out(todo) {
   return MyModule.something(todo);

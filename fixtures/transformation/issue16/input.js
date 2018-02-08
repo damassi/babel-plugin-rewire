@@ -1,34 +1,24 @@
-var React = require('react/addons');
-var _ = require('lodash');
-var StyleSheet = require('react-style');
-var cx = require('classnames');
+var React = require("react/addons");
+var _ = require("lodash");
+var StyleSheet = require("react-style");
+var cx = require("classnames");
 
-var $ = require('vendor/jquery/semantic');
+var $ = require("vendor/jquery/semantic");
 
-var Style = require('style/index.js');
+var Style = require("style/index.js");
 
-var {
-  validateEmail,
-  validateURL
-} = require('util/validators');
+var { validateEmail, validateURL } = require("util/validators");
 
 var [one, two, three] = Style;
 
+const PROTOCOLS = ["http://", "https://", "ftp://"];
 
-const PROTOCOLS = [
-  'http://',
-  'https://',
-  'ftp://'
-];
+const DEFAULT_PROTOCOL = "http://";
 
-const DEFAULT_PROTOCOL = 'http://';
-
-
-var Mixins = require('./mixins.jsx');
+var Mixins = require("./mixins.jsx");
 var FormFieldMixin = Mixins.FormFieldMixin,
-    InputMixin = Mixins.InputMixin,
-    TextInputMixin = Mixins.TextInputMixin;
-
+  InputMixin = Mixins.InputMixin,
+  TextInputMixin = Mixins.TextInputMixin;
 
 var TextInput = React.createClass({
   /*
@@ -38,7 +28,6 @@ var TextInput = React.createClass({
   */
   mixins: [TextInputMixin]
 });
-
 
 var EmailInput = React.createClass({
   /*
@@ -53,7 +42,6 @@ var EmailInput = React.createClass({
   }
 });
 
-
 var URLInput = React.createClass({
   mixins: [TextInputMixin],
   baseIsValid: function(val) {
@@ -63,8 +51,8 @@ var URLInput = React.createClass({
   baseClean: function(val) {
     // Add default protocol if none is supplied by user
     var hasProtocol = false;
-    PROTOCOLS.forEach((protocol)=>{
-      if (_.startsWith(val, protocol)){
+    PROTOCOLS.forEach(protocol => {
+      if (_.startsWith(val, protocol)) {
         hasProtocol = true;
       }
     });
@@ -73,13 +61,9 @@ var URLInput = React.createClass({
   }
 });
 
-
 var textAreaStyle = StyleSheet.create({
-  textarea: {
-
-  }
+  textarea: {}
 });
-
 
 var TextArea = React.createClass({
   /*
@@ -93,11 +77,15 @@ var TextArea = React.createClass({
     height: React.PropTypes.string
   },
   render: function() {
-    var taStyle = _.extend({}, textAreaStyle.textarea, this.props.style.textarea);
+    var taStyle = _.extend(
+      {},
+      textAreaStyle.textarea,
+      this.props.style.textarea
+    );
     var labelStyle = _.extend({}, textAreaStyle.label, this.props.style.label);
     if (this.props.height) taStyle.height = this.props.height;
     var error = !this.isValid() && this.userHasChangedValue();
-    var classNames = cx("field", {error: error});
+    var classNames = cx("field", { error: error });
     return (
       <div className={classNames}>
         {this.getLabelEl(labelStyle)}
@@ -106,12 +94,12 @@ var TextArea = React.createClass({
           onFocus={this.onFocus}
           onChange={this.onChange}
           style={taStyle}
-          value={this.state.value} />
+          value={this.state.value}
+        />
       </div>
     );
   }
 });
-
 
 var HiddenTextInput = React.createClass({
   /*
@@ -120,10 +108,14 @@ var HiddenTextInput = React.createClass({
     can be placed at the top of a Form to prevent that behaviour.
   */
   render: function() {
-    return <input type='text' style={{opacity: 0, height: 0, position: 'absolute'}}/>;
+    return (
+      <input
+        type="text"
+        style={{ opacity: 0, height: 0, position: "absolute" }}
+      />
+    );
   }
 });
-
 
 module.exports = {
   TextInput: TextInput,

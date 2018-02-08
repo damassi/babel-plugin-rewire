@@ -1,4 +1,4 @@
-var foo = 'bar';
+var foo = "bar";
 
 module.exports = {
   get: function() {

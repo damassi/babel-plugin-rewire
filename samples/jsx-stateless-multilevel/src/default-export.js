@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const Outer = ({children}) => <div>{children}</div>;
-const Inner = () => <div/>;
+const Outer = ({ children }) => <div>{children}</div>;
+const Inner = () => <div />;
 
 export default () => (
   <Outer>
-    <Inner/>
+    <Inner />
   </Outer>
-)
+);

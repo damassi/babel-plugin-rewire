@@ -1,3 +1,3 @@
-export default function addOne( val ) {
-	 return val + 1;
+export default function addOne(val) {
+  return val + 1;
 }

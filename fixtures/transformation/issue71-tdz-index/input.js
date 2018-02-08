@@ -1,8 +1,8 @@
-import getLog from './log';
+import getLog from "./log";
 
-const log = getLog('main');
+const log = getLog("main");
 
 export function getLogConstant() {
-	return log;
+  return log;
 }
-export default 'test';
+export default "test";

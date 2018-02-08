@@ -1,7 +1,7 @@
-var foo = 'bar';
+var foo = "bar";
 
 module.exports = {
-	getValue: function() {
-		return foo;
-	}
+  getValue: function() {
+    return foo;
+  }
 };

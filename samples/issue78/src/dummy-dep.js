@@ -1,1 +1,1 @@
-export default function dummy() { }
+export default function dummy() {}
