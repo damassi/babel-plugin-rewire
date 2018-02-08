@@ -14,7 +14,7 @@
 
 import { universalAccesorsTemplate, enrichExportTemplate, filterWildcardImportTemplate } from './Templates.js';
 import { wasProcessed, noRewire } from './RewireHelpers.js';
-import * as t from 'babel-types';
+import * as t from '@babel/types';
 
 export default class RewireState {
 
@@ -68,7 +68,7 @@ export default class RewireState {
 
 		return this.accessors[variableName];
 	}
-	
+
 	addTrackedIdentifier(variableName, isWildcardImport = false) {
 		this.isWildcardImport[variableName] = isWildcardImport
 		return this.trackedIdentfiers[variableName] = true;
@@ -126,7 +126,8 @@ export default class RewireState {
 			UNIVERSAL_RESETTER_ID :this.getUniversalResetterID(),
 			UNIVERSAL_WITH_ID :this.getUniversalWithID(),
 			API_OBJECT_ID: this.getAPIObjectID(),
-			REWIRED_DATA_IDENTIFIER: this.rewiredDataIdentifier
+			REWIRED_DATA_IDENTIFIER: this.rewiredDataIdentifier,
+			INTENTIONAL_UNDEFINED: undefined
 		}));
 
 		if(hasWildcardImport) {
