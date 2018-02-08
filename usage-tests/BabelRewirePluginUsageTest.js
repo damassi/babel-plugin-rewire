@@ -1,4 +1,4 @@
-var babel = require('babel-core');
+var babel = require('@babel/core');
 var path = require('path');
 var fs = require('fs');
 var expect = require('expect.js');
@@ -14,16 +14,17 @@ function isSampleCode(filename) {
 var configurations = {
 	transformSampleCodeToTestWithBabelPluginRewireAndTransformRegenerator: {
 		transformOptions: {
-			"presets": ["es2015", "react" ], //,
+			"presets": ["@babel/es2015", "@babel/react" ], //,
 			"plugins": [
-				"transform-flow-strip-types",
+				"@babel/transform-flow-strip-types",
 				babelPluginRewire,
-				"syntax-async-functions",
-				"transform-es2015-template-literals",
-				"transform-es2015-block-scoping",
-				"transform-es2015-typeof-symbol",
-				"transform-export-extensions",
-				"transform-regenerator"
+				// "syntax-async-functions",
+				"@babel/transform-template-literals",
+				"@babel/transform-block-scoping",
+				"@babel/transform-typeof-symbol",
+				"@babel/proposal-export-namespace-from",
+				// "transform-export-extensions",
+				"@babel/transform-regenerator"
 			]
 		},
 		samples: [

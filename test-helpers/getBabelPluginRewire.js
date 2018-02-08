@@ -1,10 +1,10 @@
-var babel = require('babel-core');
+var babel = require('@babel/core');
 var path = require('path');
 var hook = require('node-hook');
 var plugin = null;
 var pluginPath = path.resolve(__dirname, '../src/babel-plugin-rewire.js');
 var babelTransformationOptions = {
-	"presets": ["es2015"],
+	"presets": ["@babel/es2015"],
 	retainLines: true
 };
 

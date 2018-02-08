@@ -127,7 +127,8 @@ export default class RewireState {
 			UNIVERSAL_WITH_ID :this.getUniversalWithID(),
 			API_OBJECT_ID: this.getAPIObjectID(),
 			REWIRED_DATA_IDENTIFIER: this.rewiredDataIdentifier,
-			INTENTIONAL_UNDEFINED: undefined
+			INTENTIONAL_UNDEFINED: 'INTENTIONAL_UNDEFINED',
+			__INTENTIONAL_UNDEFINED__: '__INTENTIONAL_UNDEFINED__'
 		}));
 
 		if(hasWildcardImport) {
