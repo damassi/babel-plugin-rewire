@@ -13,7 +13,8 @@ describe("BabelRewirePluginTest", () => {
     plugins: [
       babelPluginRewire,
       "@babel/syntax-flow",
-      "@babel/proposal-export-namespace-from"
+      "@babel/proposal-export-namespace-from",
+      "@babel/proposal-export-default-from"
     ]
   };
 
@@ -27,7 +28,8 @@ describe("BabelRewirePluginTest", () => {
         }
       ],
       "@babel/syntax-flow",
-      "@babel/proposal-export-namespace-from"
+      "@babel/proposal-export-namespace-from",
+      "@babel/proposal-export-default-from"
     ]
   };
 
@@ -40,6 +42,7 @@ describe("BabelRewirePluginTest", () => {
       "@babel/transform-template-literals",
       "@babel/transform-typeof-symbol",
       "@babel/proposal-export-namespace-from",
+      "@babel/proposal-export-default-from",
       "@babel/transform-regenerator"
     ]
   };

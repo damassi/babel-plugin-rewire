@@ -2,7 +2,8 @@ var babel = require("@babel/core");
 var path = require("path");
 var fs = require("fs");
 var expect = require("expect.js");
-var hook = require("node-hook");
+// var hook = require("node-hook");
+var pirates = require("pirates");
 var babelPluginRewire = require("../lib/babel-plugin-rewire.js"); // */ require('../test-helpers/getBabelPluginRewire.js');
 require("core-js");
 
@@ -17,7 +18,8 @@ var configurations = {
       presets: ["@babel/es2015", "@babel/react", "@babel/stage-0"],
       plugins: [
         babelPluginRewire,
-        // "@babel/transform-runtime",
+        "@babel/proposal-export-default-from",
+        "@babel/transform-runtime",
         "@babel/transform-block-scoping",
         "@babel/transform-template-literals",
         "@babel/transform-typeof-symbol",
@@ -40,7 +42,8 @@ var configurations = {
     //   ]
     // },
     samples: [
-      "issue16"
+      "simple"
+      // "issue16"
       // "issue18",
       // "issue19",
       // "issue20",
@@ -132,23 +135,25 @@ Object.keys(configurations).forEach(function(configurationName) {
     var configuration = configurations[configurationName];
     var transformOptions = configuration.transformOptions;
 
-    function transformFunction(source, filename) {
-      // if (isSampleCode(filename)) {
-      //   console.log("=========== " + filename + "============");
-      //   var code = babel.transform(source, transformOptions).code;
-      //   console.log(code);
-      //   return code;
-      // }
+    var revert = pirates.addHook(
+      function hook(code, filename) {
+        // console.log("=========== " + filename + "============");
+        // var o = babel.transform(code, transformOptions).code;
+        // console.log(o);
+        return babel.transform(code, transformOptions).code;
+      },
+      {
+        exts: [".js"],
+        matcher: filename => {
+          return isSampleCode(filename);
+        }
+      }
+    );
 
-      return isSampleCode(filename)
-        ? babel.transform(source, transformOptions).code
-        : source;
-    }
-
-    hook.hook(".js", transformFunction);
     configuration.samples.forEach(function(sampleName) {
       require("../samples/" + sampleName + "/sample.js");
     });
-    hook.unhook(".js"); // removes your own transform
+
+    revert();
   });
 });
