@@ -14,105 +14,117 @@ function isSampleCode(filename) {
 var configurations = {
   transformSampleCodeToTestWithBabelPluginRewireAndTransformRegenerator: {
     transformOptions: {
-      presets: ["@babel/es2015", "@babel/react"], //,
+      presets: ["@babel/es2015", "@babel/react", "@babel/stage-0"],
       plugins: [
-        "@babel/transform-flow-strip-types",
         babelPluginRewire,
-        // "syntax-async-functions",
-        "@babel/transform-template-literals",
+        // "@babel/transform-runtime",
         "@babel/transform-block-scoping",
+        "@babel/transform-template-literals",
         "@babel/transform-typeof-symbol",
         "@babel/proposal-export-namespace-from",
-        // "transform-export-extensions",
         "@babel/transform-regenerator"
       ]
     },
+    // transformOptions: {
+    //   presets: ["@babel/es2015", "@babel/react"], //,
+    //   plugins: [
+    //     "@babel/transform-flow-strip-types",
+    //     babelPluginRewire,
+    //     // "syntax-async-functions",
+    //     "@babel/transform-template-literals",
+    //     "@babel/transform-block-scoping",
+    //     "@babel/transform-typeof-symbol",
+    //     "@babel/proposal-export-namespace-from",
+    //     // "transform-export-extensions",
+    //     "@babel/transform-regenerator"
+    //   ]
+    // },
     samples: [
-      "issue16",
-      "issue18",
-      "issue19",
-      "issue20",
-      "issue22",
-      "issue28",
-      "issue29",
-      "issue30",
-      "issue33",
-      "issue48",
-      "issue59",
-      "issue71-tdz",
+      "issue16"
+      // "issue18",
+      // "issue19",
+      // "issue20",
+      // "issue22",
+      // "issue28",
+      // "issue29",
+      // "issue30",
+      // "issue33",
+      // "issue48",
+      // "issue59",
+      // "issue71-tdz",
       //uncomment as we are currently not able to support this. As this as soon as we are able to support wildcard rexecport: require('../samples/issue78/sample.js');
       //require('../samples/issue82/sample.js');
-      "issue121",
-      "functionRewireScope",
-      "namedExportsRewire",
-      "namedExportRewireSupport",
-      "namedExportsWithNameClash",
-      "nestedScopes",
-      "objectLiteralNameClash",
-      "passThrough",
-      "defaultExportNonExtensible",
-      "typedExport",
-      "nonEnumerableProperties",
-      "redefinedRewireProperties",
-      "defaultExportImport",
-      "redux-issue",
-      "withSupport",
-      "rewireClasses",
-      "rewireParentChild",
-      "objectAssign",
-      "updateOperations",
-      "wildcardExport",
-      "namedWildcardExport",
-      "assignmentOperations",
-      "jsx-switch",
-      "jsx-stateless-multilevel",
-      "rewireToUndefined",
-      "issue115-should-js",
-      "issue140-chai-should",
-      "issue130-jsx-es6-type-imports",
-      "issue133",
-      "issue136",
-      "jsxSupport",
-      "issue152-1",
-      "issue155",
-      "issue146-revert-function-for-set",
-      "issue163",
-      "issue165",
-      "issue109"
+      // "issue121",
+      // "functionRewireScope",
+      // "namedExportsRewire",
+      // "namedExportRewireSupport",
+      // "namedExportsWithNameClash",
+      // "nestedScopes",
+      // "objectLiteralNameClash",
+      // "passThrough",
+      // "defaultExportNonExtensible",
+      // "typedExport",
+      // "nonEnumerableProperties",
+      // "redefinedRewireProperties",
+      // "defaultExportImport",
+      // "redux-issue",
+      // "withSupport",
+      // "rewireClasses",
+      // "rewireParentChild",
+      // "objectAssign",
+      // "updateOperations",
+      // "wildcardExport",
+      // "namedWildcardExport",
+      // "assignmentOperations",
+      // "jsx-switch",
+      // "jsx-stateless-multilevel",
+      // "rewireToUndefined",
+      // "issue115-should-js",
+      // "issue140-chai-should",
+      // "issue130-jsx-es6-type-imports",
+      // "issue133",
+      // "issue136",
+      // "jsxSupport",
+      // "issue152-1",
+      // "issue155",
+      // "issue146-revert-function-for-set",
+      // "issue163",
+      // "issue165",
+      // "issue109"
     ]
-  },
-  transformSampleCodeToTestWithBabelPluginRewireAndTransformAsyncToGenerator: {
-    transformOptions: {
-      presets: ["es2015", "react"], //,
-      plugins: [
-        babelPluginRewire,
-        "syntax-async-functions",
-        "transform-es2015-template-literals",
-        "transform-es2015-block-scoping",
-        "transform-es2015-typeof-symbol",
-        "transform-export-extensions",
-        "babel-plugin-transform-async-to-generator"
-      ]
-    },
-    samples: ["issue152-2"]
-  },
-  transformSampleCodeToTestWithBabelPluginRewireAndFlow: {
-    transformOptions: {
-      presets: ["es2015", "react"], //,
-      plugins: [
-        babelPluginRewire,
-        "transform-object-rest-spread",
-        "transform-flow-strip-types",
-        "syntax-async-functions",
-        "transform-es2015-template-literals",
-        "transform-es2015-block-scoping",
-        "transform-es2015-typeof-symbol",
-        "transform-export-extensions",
-        "transform-regenerator"
-      ]
-    },
-    samples: ["issue151-flow"]
   }
+  // transformSampleCodeToTestWithBabelPluginRewireAndTransformAsyncToGenerator: {
+  //   transformOptions: {
+  //     presets: ["es2015", "react"], //,
+  //     plugins: [
+  //       babelPluginRewire,
+  //       "syntax-async-functions",
+  //       "transform-es2015-template-literals",
+  //       "transform-es2015-block-scoping",
+  //       "transform-es2015-typeof-symbol",
+  //       "transform-export-extensions",
+  //       "babel-plugin-transform-async-to-generator"
+  //     ]
+  //   },
+  //   samples: ["issue152-2"]
+  // },
+  // transformSampleCodeToTestWithBabelPluginRewireAndFlow: {
+  //   transformOptions: {
+  //     presets: ["es2015", "react"], //,
+  //     plugins: [
+  //       babelPluginRewire,
+  //       "transform-object-rest-spread",
+  //       "transform-flow-strip-types",
+  //       "syntax-async-functions",
+  //       "transform-es2015-template-literals",
+  //       "transform-es2015-block-scoping",
+  //       "transform-es2015-typeof-symbol",
+  //       "transform-export-extensions",
+  //       "transform-regenerator"
+  //     ]
+  //   },
+  //   samples: ["issue151-flow"]
+  // }
 };
 
 Object.keys(configurations).forEach(function(configurationName) {
@@ -121,12 +133,12 @@ Object.keys(configurations).forEach(function(configurationName) {
     var transformOptions = configuration.transformOptions;
 
     function transformFunction(source, filename) {
-      /*if(isSampleCode(filename)) {
-			 console.log("=========== " + filename + "============");
-			 var code = babel.transform(source, transformOptions).code;
-			 console.log(code);
-			 return code;
-			 }*/
+      // if (isSampleCode(filename)) {
+      //   console.log("=========== " + filename + "============");
+      //   var code = babel.transform(source, transformOptions).code;
+      //   console.log(code);
+      //   return code;
+      // }
 
       return isSampleCode(filename)
         ? babel.transform(source, transformOptions).code

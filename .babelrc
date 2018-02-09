@@ -1,5 +1,5 @@
 {
-  "presets": ["@babel/es2015"],
+  "presets": ["@babel/es2015", "@babel/env"],
   "plugins": [
     "@babel/plugin-proposal-export-namespace-from"
   ]
