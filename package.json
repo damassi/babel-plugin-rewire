@@ -85,7 +85,8 @@
     "react-dom": "^15.1.0",
     "regenerator-runtime": "^0.9.5",
     "should": "^9.0.2",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "uglify-es": "^3.3.10"
   },
   "peerDependencies": {
     "@babel/core": "^7.0.0-beta.39",
