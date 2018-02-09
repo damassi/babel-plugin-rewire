@@ -91,12 +91,6 @@ describe("BabelRewirePluginTest", () => {
       "utf-8"
     );
 
-    //fs.writeFileSync(path.resolve(directory, 'expected.js'), transformationOutput, 'utf-8');
-
-    if (expected.trim() != transformationOutput.trim()) {
-      console.log(transformationOutput);
-    }
-
     validate(transformationOutput, expected);
   }
 

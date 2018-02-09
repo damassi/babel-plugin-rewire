@@ -8,7 +8,7 @@
     "precommit": "lint-staged",
     "prettier-write": "yarn run prettier --write",
     "test": "node_modules/.bin/mocha",
-    "test:usage": "yarn build && node node_modules/.bin/mocha  --compilers js:@babel/register usage-tests"
+    "test:usage": "yarn build && mocha --compilers js:@babel/register usage-tests"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
